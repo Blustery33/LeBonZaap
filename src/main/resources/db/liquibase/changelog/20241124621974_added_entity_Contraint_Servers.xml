@@ -1,0 +1,9 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <!-- Add contraint for entity Servers -->
+
+    <changeSet author="guillaume" id="20241124621974">
+        <addForeignKeyConstraint baseColumnNames="game_id" baseTableName="servers" constraintName="fkmuoe37kw0mmw54vuh34glxxcm" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="games" validate="true"/>
+    </changeSet>
+</databaseChangeLog>

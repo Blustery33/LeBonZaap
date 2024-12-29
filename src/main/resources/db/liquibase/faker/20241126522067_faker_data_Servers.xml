@@ -1,0 +1,15 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <!-- Fake Data Servers -->
+
+    <changeSet author="guillaume" id="20241126522067">
+        <loadUpdateData file="db/liquibase/faker-data/servers.csv" tableName="servers" primaryKey="id">
+            <column name="id" type="BIGINT"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="game_id" type="BIGINT"/>
+        </loadUpdateData>
+    </changeSet>
+</databaseChangeLog>

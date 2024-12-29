@@ -1,0 +1,25 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <!-- Add Entity Workers -->
+
+    <changeSet author="guillaume" id="20241124159653">
+        <createTable tableName="workers">
+            <column autoIncrement="true" name="id" startWith="3" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="workers_pkey"/>
+            </column>
+            <column name="user_id" type="BIGINT"/>
+        </createTable>
+
+        <addUniqueConstraint columnNames="user_id" constraintName="uk_workers_user_id" tableName="workers"/>
+        <!-- Ajout de la contrainte de clé étrangère -->
+        <addForeignKeyConstraint
+                baseColumnNames="user_id"
+                baseTableName="workers"
+                constraintName="fk_workers_user"
+                referencedColumnNames="id"
+                referencedTableName="user_model"
+                onDelete="CASCADE"/>
+    </changeSet>
+
+</databaseChangeLog>

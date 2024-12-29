@@ -1,0 +1,11 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <!-- Add contraint for entity Offers -->
+
+    <changeSet author="guillaume" id="20241124467347">
+        <addForeignKeyConstraint baseColumnNames="worker_server_id" baseTableName="offers" constraintName="fkq9r69nt2ur1i7dd634xxqo3ck" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="CASCADE" referencedColumnNames="id" referencedTableName="worker_server" validate="true"/>
+        <addForeignKeyConstraint baseColumnNames="worker_server_job_id" baseTableName="offers" constraintName="fk_worker_server_job_offer" deferrable="false" initiallyDeferred="false" onDelete="CASCADE" onUpdate="CASCADE" referencedColumnNames="id" referencedTableName="worker_server_job" validate="true"/>
+        <addForeignKeyConstraint baseColumnNames="worker_server_service_id" baseTableName="offers" constraintName="fk_worker_server_service_offer" deferrable="false" initiallyDeferred="false" onDelete="CASCADE" onUpdate="CASCADE" referencedColumnNames="id" referencedTableName="worker_server_service" validate="true"/>
+    </changeSet>
+</databaseChangeLog>

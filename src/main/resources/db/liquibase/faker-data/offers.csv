@@ -1,0 +1,3 @@
+id,created_at,description,offer_hidden,price,pseudo_in_game,title_offer,worker_server_id,worker_server_job_id,worker_server_service_id
+1,2024-11-18 10:30:15.000000,Description de l'offre 1,false,100,Moutmoutonfire,Titre de l'offre mout,1,1,null
+2,2024-11-18 10:30:15.000000,Description de l'offre 2,true,200,Inspecteur-malou,Titre de l'offre malou,3,,3

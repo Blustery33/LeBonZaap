@@ -1,0 +1,10 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <!-- Add contraint for entity NoticeOffer -->
+
+    <changeSet author="guillaume" id="20241124825254">
+        <addForeignKeyConstraint baseColumnNames="offer_id" baseTableName="notice_offer" constraintName="fkafioax4rw9ujaen98bmyh3ase" deferrable="false" initiallyDeferred="false" onDelete="CASCADE" onUpdate="CASCADE" referencedColumnNames="id" referencedTableName="offers" validate="true"/>
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="notice_offer" constraintName="fklorj1h3b9x5bh1gn5uic6xqcb" deferrable="false" initiallyDeferred="false" onDelete="CASCADE" onUpdate="CASCADE" referencedColumnNames="id" referencedTableName="user_model" validate="true"/>
+    </changeSet>
+</databaseChangeLog>

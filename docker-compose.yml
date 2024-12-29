@@ -1,0 +1,35 @@
+services:
+  # Exemple d'un service pour une base de données PostgreSQL
+  postgres:
+    image: postgres:14
+    environment:
+      POSTGRES_USER: postgres
+      SPRING_DATASOURCE_URL: "jdbc:postgresql://postgres:5432/dofuswakfu"
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: dofuswakfu
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - app-network
+  springboot-app:
+    build: .
+    restart: always
+    ports:
+      - "8081:8081"
+    volumes:
+      - .:/app
+    environment:
+      SPRING_PROFILES_ACTIVE: "local"
+      SPRING_DATASOURCE_URL: "jdbc:postgresql://postgres:5432/dofuswakfu"
+      SPRING_DATASOURCE_USERNAME: "postgres"
+      SPRING_DATASOURCE_PASSWORD: "postgres"
+    networks:
+      - app-network
+
+volumes:
+  postgres-data:
+
+networks:
+  app-network:

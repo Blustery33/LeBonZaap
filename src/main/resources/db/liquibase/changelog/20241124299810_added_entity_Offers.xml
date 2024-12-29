@@ -1,0 +1,22 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <!-- Add Entity Offers -->
+
+    <changeSet author="guillaume" id="20241124299810">
+        <createTable tableName="offers">
+            <column autoIncrement="true" name="id" startWith="3" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="offers_pkey"/>
+            </column>
+            <column name="created_at" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="offer_hidden" type="BOOLEAN"/>
+            <column name="price" type="VARCHAR(255)"/>
+            <column name="pseudo_in_game" type="VARCHAR(255)"/>
+            <column name="title_offer" type="VARCHAR(255)"/>
+            <column name="worker_server_id" type="BIGINT"/>
+            <column name="worker_server_job_id" type="BIGINT"/>
+            <column name="worker_server_service_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

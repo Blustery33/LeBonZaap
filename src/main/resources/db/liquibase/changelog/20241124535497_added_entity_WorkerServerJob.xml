@@ -1,0 +1,17 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <!-- Add Entity WorkerServerJob -->
+
+    <changeSet author="guillaume" id="20241124535497">
+        <createTable tableName="worker_server_job">
+            <column autoIncrement="true" name="id" startWith="2" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="worker_server_job_pkey"/>
+            </column>
+            <column name="level" type="INTEGER"/>
+            <column name="job_id" type="BIGINT"/>
+            <column name="worker_server_id" type="BIGINT"/>
+            <column name="worker_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,16 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <!-- Fake Data WorkerServerService -->
+
+    <changeSet author="guillaume" id="20241126845012">
+        <loadUpdateData file="db/liquibase/faker-data/worker_server_service.csv" tableName="worker_server_service" primaryKey="id">
+            <column name="id" type="BIGINT"/>
+            <column name="job_id" type="BIGINT"/>
+            <column name="service_id" type="BIGINT"/>
+            <column name="worker_server_id" type="BIGINT"/>
+        </loadUpdateData>
+    </changeSet>
+</databaseChangeLog>

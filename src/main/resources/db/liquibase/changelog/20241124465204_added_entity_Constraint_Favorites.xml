@@ -1,0 +1,10 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <!-- Add contraint for entity Favorites -->
+
+    <changeSet author="guillaume" id="20241124465204">
+        <addForeignKeyConstraint baseColumnNames="offer_id" baseTableName="favorites" constraintName="fkkwytcso8gondudcbjxchd7yw2" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="offers" validate="true"/>
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="favorites" constraintName="fkl55qin7s1928xod3lw6ukvoma" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="user_model" validate="true"/>
+    </changeSet>
+</databaseChangeLog>
