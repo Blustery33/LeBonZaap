@@ -4,7 +4,7 @@
     <!-- Add contraint for entity Favorites -->
 
     <changeSet author="guillaume" id="20241124465204">
-        <addForeignKeyConstraint baseColumnNames="offer_id" baseTableName="favorites" constraintName="fkkwytcso8gondudcbjxchd7yw2" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="offers" validate="true"/>
-        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="favorites" constraintName="fkl55qin7s1928xod3lw6ukvoma" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="user_model" validate="true"/>
+        <addForeignKeyConstraint baseColumnNames="offer_id" baseTableName="favorites" constraintName="fkkwytcso8gondudcbjxchd7yw2" deferrable="false" initiallyDeferred="false" onDelete="CASCADE" onUpdate="CASCADE" referencedColumnNames="id" referencedTableName="offers" validate="true"/>
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="favorites" constraintName="fkl55qin7s1928xod3lw6ukvoma" deferrable="false" initiallyDeferred="false" onDelete="CASCADE" onUpdate="CASCADE" referencedColumnNames="id" referencedTableName="user_model" validate="true"/>
     </changeSet>
 </databaseChangeLog>

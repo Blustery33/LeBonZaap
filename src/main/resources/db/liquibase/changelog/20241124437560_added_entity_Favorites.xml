@@ -5,13 +5,16 @@
 
     <changeSet author="guillaume" id="20241124437560">
         <createTable tableName="favorites">
-            <column name="user_id" type="BIGINT">
+            <column autoIncrement="true" name="id" type="BIGINT">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="favorites_pkey"/>
+            </column>
+            <column name="user_id" type="BIGINT">
+                <constraints nullable="false"/>
             </column>
             <column name="offer_id" type="BIGINT">
-                <constraints nullable="false" primaryKey="true" primaryKeyName="favorites_pkey"/>
+                <constraints nullable="false"/>
             </column>
+            <column name="is_favorite" type="BOOLEAN"/>
         </createTable>
     </changeSet>
-
 </databaseChangeLog>
